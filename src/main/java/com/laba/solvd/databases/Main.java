@@ -56,6 +56,7 @@ public class Main {
     UserProfile userProfile = user.getUserProfile();
     PlaylistList playlistList = user.getPlaylistList();
     List<Wishlist> wishlistList = user.getWishlistList();
+    
 
     System.out.println("User ID:" + UserId);
     System.out.println("User Name:" + name);
@@ -63,6 +64,7 @@ public class Main {
     System.out.println("User Password:" + password);
     System.out.println("User Profile:" + userProfile);
     System.out.println("Playlist: " + playlistList);
+
 
 
     if (playlistList != null) {

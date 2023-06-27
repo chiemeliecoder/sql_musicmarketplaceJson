@@ -12,14 +12,14 @@ import javax.xml.bind.annotation.XmlElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class UserProfile {
 
-  @XmlElement(name = "Id")
+  @XmlElement(name = "id")
   private Integer id;
 
   @XmlElement
   private String bio;
 
-  @XmlElement(name = "ProfileImage")
-  @JsonProperty("Profileimage")
+  @XmlElement(name = "profileimage")
+  @JsonProperty("profileimage")
   private String profileimage;
 
   @XmlElement

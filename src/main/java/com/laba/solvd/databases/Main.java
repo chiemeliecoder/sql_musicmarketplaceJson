@@ -22,22 +22,25 @@ public class Main {
 
 
 
-//    try {
-//      String jsonFilePath = "src/main/resources/musicdata.json";
-//
-//      User user = JsonParser.parseJsonFile(jsonFilePath);
-//
-//      // Access the parsed user object and perform operations
-//      System.out.println(user.getName());
-////      System.out.println(user.getUserProfile().getBio());
-////      System.out.println(user.getPlaylistList().get(0).getPlaylistName());
-////      System.out.println(user.getWishlistList().get(0).getName());
-////      System.out.println(user.getWishlistList().get(0).getAlbumList().get(0).getAlbumName());
-//    } catch (
-//    IOException e) {
-//      e.printStackTrace();
-//    }
+    try {
+      String jsonFilePath = "src/main/resources/musicdata.json";
 
+      User user = JsonParser.parseJsonFile(jsonFilePath);
+
+      // Access the parsed user object and perform operations
+      System.out.println(user.getName());
+      System.out.println(user.getEmail());
+      System.out.println(user.getPassword());
+      System.out.println(user.getUserProfile().getBio());
+      //System.out.println(user.getPlaylistList().get(0).getPlaylistName());
+//      System.out.println(user.getWishlistList().get(0).getName());
+//      System.out.println(user.getWishlistList().get(0).getAlbumList().get(0).getAlbumName());
+    } catch (
+    IOException e) {
+      e.printStackTrace();
+    }
+
+    logger.info("Jaxb Parser Results:");
 
     String xmlFile = "src/main/resources/musicdata.xml";
     XMLParser xmlParser = new XMLParser();
@@ -72,7 +75,7 @@ public class Main {
         }
       }
     }
-    
+
 
     for (Wishlist wishlist:wishlistList) {
       System.out.println("Wishlist id:" + wishlist.getId());

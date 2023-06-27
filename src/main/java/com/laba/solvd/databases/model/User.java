@@ -1,5 +1,6 @@
 package com.laba.solvd.databases.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -12,13 +13,15 @@ import java.util.List;
 @XmlRootElement(name = "User")
 //@XmlAccessorType(XmlAccessType.NONE)
 @XmlAccessorType(XmlAccessType.FIELD)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
   @XmlElement(name = "userId")
-  @JsonProperty("UserId")
+  @JsonProperty("userId")
   private Integer userId;
 
   @XmlElement
+  @JsonProperty("Name")
   private String name;
 
   @XmlElement
@@ -68,7 +71,7 @@ public class User {
   }
 
 
-  @JsonProperty("Id")
+  @JsonProperty("userId")
   public Integer getUserId() {
     return userId;
   }
@@ -104,7 +107,7 @@ public class User {
     this.password = password;
   }
 
-  @JsonProperty("UserProfile")
+  @JsonProperty("userProfile")
   public UserProfile getUserProfile() {
     return userProfile;
   }

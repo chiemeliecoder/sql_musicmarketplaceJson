@@ -32,11 +32,12 @@ public class Main {
       System.out.println(user.getEmail());
       System.out.println(user.getPassword());
       System.out.println(user.getUserProfile().getBio());
-      //System.out.println(user.getPlaylistList().get(0).getPlaylistName());
-//      System.out.println(user.getWishlistList().get(0).getName());
+      System.out.println(user.getUserProfile().getLocation());
+      System.out.println(user.getUserProfile().getProfileimage());
+      System.out.println(user.getPlaylistList().getPlaylists());
+      System.out.println(user.getWishlistList());
 //      System.out.println(user.getWishlistList().get(0).getAlbumList().get(0).getAlbumName());
-    } catch (
-    IOException e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
 

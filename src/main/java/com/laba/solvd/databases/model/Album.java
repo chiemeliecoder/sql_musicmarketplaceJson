@@ -12,17 +12,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 
 
-@XmlRootElement(name = "Album")
+
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Album {
 
-  @XmlElement
+  @XmlElement(name = "AlbumId")
   private int id;
 
-  @XmlElement
+  @XmlElement(name = "AlbumTitle")
   private String albumName;
 
-  @XmlElement
+  @XmlElement(name = "ReleaseDate")
   @XmlSchemaType(name = "date")
   @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
   private Date albumDate;

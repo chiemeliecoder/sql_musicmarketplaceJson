@@ -10,17 +10,17 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
-@XmlRootElement(name = "Wishlist")
+
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Wishlist {
 
-  @XmlElement
+  @XmlElement(name = "WishlistId")
   private int id;
 
-  @XmlElement
+  @XmlElement(name = "Name")
   private String name;
 
-  @XmlElementWrapper(name = "AlbumList")
+  @XmlElementWrapper(name = "albums")
   @XmlElement(name = "Album")
   @JsonProperty("albums")
   private List<Album> albumList;

@@ -1,19 +1,24 @@
 package com.laba.solvd.databases.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class UserProfile {
 
-  @XmlElement
+  @XmlElement(name = "Id")
   private Integer id;
 
   @XmlElement
   private String bio;
 
-  @XmlElement
+  @XmlElement(name = "ProfileImage")
   @JsonProperty("Profileimage")
   private String profileimage;
 

@@ -8,14 +8,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
-@XmlRootElement(name = "Playlist")
+
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Playlist {
 
-  @XmlElement
+  @XmlElement(name = "PlaylistId")
   private int id;
 
-  @XmlElement
+  @XmlElement(name = "PlaylistName")
   private String playlistName;
 
 

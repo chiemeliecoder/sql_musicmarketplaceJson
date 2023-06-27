@@ -10,7 +10,8 @@ import java.util.List;
 
 
 @XmlRootElement(name = "User")
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.NONE)
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class User {
 
   @XmlElement
@@ -23,10 +24,10 @@ public class User {
   @XmlElement
   private String email;
 
-  @XmlElement
+  @XmlTransient
   private String password;
 
-  @XmlElement(name = "UserProfile")
+  @XmlElement(name = "userProfile")
   private UserProfile userProfile;
 
   @XmlElementWrapper(name = "PlaylistList")

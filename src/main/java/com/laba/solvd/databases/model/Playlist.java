@@ -8,14 +8,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
-
+//@XmlRootElement(name = "playlist")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Playlist {
 
-  @XmlElement(name = "PlaylistId")
-  private int id;
+  @XmlElement(name = "playlistid")
+  private Integer playlistid;
 
-  @XmlElement(name = "PlaylistName")
+  @XmlElement(name = "playlistName")
   private String playlistName;
 
 
@@ -23,17 +23,17 @@ public class Playlist {
   public Playlist() {
   }
 
-  public Playlist(int id, String playlistName) {
-    this.id = id;
+  public Playlist(Integer id, String playlistName) {
+    this.playlistid = id;
     this.playlistName = playlistName;
   }
 
-  public int getId() {
-    return id;
+  public Integer getPlaylistid() {
+    return playlistid;
   }
 
-  public void setId(int id) {
-    this.id = id;
+  public void setPlaylistid(Integer playlistid) {
+    this.playlistid = playlistid;
   }
 
   public String getPlaylistName() {
@@ -48,7 +48,7 @@ public class Playlist {
   @Override
   public String toString() {
     return "Playlist{" +
-        "id=" + id +
+        "playlistid=" + playlistid +
         ", playlistName='" + playlistName + '\'' +
         '}';
   }

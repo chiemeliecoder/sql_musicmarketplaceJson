@@ -10,13 +10,13 @@ import java.util.List;
 
 
 @XmlRootElement(name = "User")
-@XmlAccessorType(XmlAccessType.NONE)
-//@XmlAccessorType(XmlAccessType.FIELD)
+//@XmlAccessorType(XmlAccessType.NONE)
+@XmlAccessorType(XmlAccessType.FIELD)
 public class User {
 
-  @XmlElement
+  @XmlElement(name = "userId")
   @JsonProperty("UserId")
-  private Integer UserId;
+  private Integer userId;
 
   @XmlElement
   private String name;
@@ -30,21 +30,25 @@ public class User {
   @XmlElement(name = "userProfile")
   private UserProfile userProfile;
 
-  @XmlElementWrapper(name = "PlaylistList")
-  @XmlElement(name = "Playlist")
-  private List<Playlist> playlistList;
+//  @XmlElementWrapper(name = "playlistList")
+//  @XmlElement(name = "playlist")
+//  private List<Playlist> playlistList;
 
-  @XmlElementWrapper(name = "WishlistList")
-  @XmlElement(name = "Wishlist")
+  @XmlElement(name = "playlistList")
+  private PlaylistList playlistList;
+
+  @XmlElementWrapper(name = "wishlistList")
+  @XmlElement(name = "wishlist")
   private List<Wishlist> wishlistList;
 
 
 
   public User() {
+    playlistList = new PlaylistList();
   }
 
   public User(Integer id, String name, String email, String password) {
-    this.UserId = id;
+    this.userId = id;
     this.name = name;
     this.email = email;
     this.password = password;
@@ -52,9 +56,9 @@ public class User {
 
   public User(Integer id, String name, String email, String password,
       UserProfile userProfile,
-      List<Playlist> playlistList,
+      PlaylistList playlistList,
       List<Wishlist> wishlistList) {
-    this.UserId = id;
+    this.userId = id;
     this.name = name;
     this.email = email;
     this.password = password;
@@ -63,13 +67,14 @@ public class User {
     this.wishlistList = wishlistList;
   }
 
+
   @JsonProperty("Id")
-  public Integer getId() {
-    return UserId;
+  public Integer getUserId() {
+    return userId;
   }
 
-  public void setId(Integer id) {
-    this.UserId = id;
+  public void setUserId(Integer userId) {
+    this.userId = userId;
   }
 
   @JsonProperty("Name")
@@ -109,11 +114,13 @@ public class User {
   }
 
   @JsonProperty("PlaylistsList")
-  public List<Playlist> getPlaylistList() {
+  public PlaylistList getPlaylistList() {
     return playlistList;
   }
 
-  public void setPlaylistList(List<Playlist> playlistList) {
+
+
+  public void setPlaylistList(PlaylistList playlistList) {
     this.playlistList = playlistList;
   }
 
@@ -130,7 +137,7 @@ public class User {
   @Override
   public String toString() {
     return "User{" +
-        "id=" + UserId +
+        "id=" + userId +
         ", name='" + name + '\'' +
         ", email='" + email + '\'' +
         ", password='" + password + '\'' +

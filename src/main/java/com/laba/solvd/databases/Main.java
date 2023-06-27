@@ -2,6 +2,7 @@ package com.laba.solvd.databases;
 
 import com.laba.solvd.databases.model.Album;
 import com.laba.solvd.databases.model.Playlist;
+import com.laba.solvd.databases.model.PlaylistList;
 import com.laba.solvd.databases.model.User;
 import com.laba.solvd.databases.model.UserProfile;
 import com.laba.solvd.databases.model.Wishlist;
@@ -38,20 +39,45 @@ public class Main {
 //    }
 
 
-    File xmlFile = new File("src/main/resources/musicdata.xml");
+    String xmlFile = "src/main/resources/musicdata.xml";
     XMLParser xmlParser = new XMLParser();
     User user = xmlParser.parseXML(xmlFile);
 
-    if (user != null) {
-      // Handle the parsed user object
-      System.out.println(user.getName());
-      System.out.println(user.getUserProfile().getBio());
-      System.out.println(user.getPlaylistList().get(0).getPlaylistName());
-      System.out.println(user.getWishlistList().get(0).getName());
-      System.out.println(user.getWishlistList().get(0).getAlbumList().get(0).getAlbumName());
-    } else {
-      // Handle the case when parsing fails
-      System.out.println("Failed to parse XML.");
+//    PlaylistList playlistList = new PlaylistList();
+
+    Integer UserId = user.getUserId();
+    String name = user.getName();
+    String email = user.getEmail();
+    String password = user.getPassword();
+    UserProfile userProfile = user.getUserProfile();
+    PlaylistList playlistList = user.getPlaylistList();
+    List<Wishlist> wishlistList = user.getWishlistList();
+
+    System.out.println("User ID:" + UserId);
+    System.out.println("User Name:" + name);
+    System.out.println("User Email:" + email);
+    System.out.println("User Password:" + password);
+    System.out.println("User Profile:" + userProfile);
+    System.out.println("Playlist: " + playlistList);
+
+
+    if (playlistList != null) {
+      List<Playlist> playlists = playlistList.getPlaylists();
+      if (playlists != null) {
+        for (Playlist playlist : playlists) {
+          Integer playlistId = playlist.getPlaylistid();
+          String playlistName = playlist.getPlaylistName();
+          System.out.println("Playlist ID: " + playlistId);
+          System.out.println("Playlist Name: " + playlistName);
+        }
+      }
+    }
+    
+
+    for (Wishlist wishlist:wishlistList) {
+      System.out.println("Wishlist id:" + wishlist.getId());
+      System.out.println("Wishlist Name:"+ wishlist.getName());
+      System.out.println("Album List:" + wishlist.getAlbumList());
     }
 
 

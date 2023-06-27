@@ -22,7 +22,7 @@ public class Album {
   @XmlElement(name = "AlbumTitle")
   private String albumName;
 
-  @XmlElement(name = "ReleaseDate")
+  @XmlElement(name = "albumDate")
   @XmlSchemaType(name = "date")
   @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
   private Date albumDate;

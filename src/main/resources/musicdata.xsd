@@ -5,28 +5,28 @@
     <xsd:element name="User">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="UserId" type="xsd:int"/>
+                <xsd:element name="userId" type="xsd:int"/>
                 <xsd:element name="name" type="xsd:string"/>
                 <xsd:element name="email" type="xsd:string"/>
                 <xsd:element name="password" type="xsd:string"/>
                 <xsd:element name="userProfile">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="Id" type="xsd:int"/>
-                            <xsd:element name="Bio" type="xsd:string"/>
-                            <xsd:element name="ProfileImage" type="xsd:string"/>
-                            <xsd:element name="Location" type="xsd:string"/>
+                            <xsd:element name="id" type="xsd:int"/>
+                            <xsd:element name="bio" type="xsd:string"/>
+                            <xsd:element name="profileimage" type="xsd:string"/>
+                            <xsd:element name="location" type="xsd:string"/>
                         </xsd:sequence>
                     </xsd:complexType>
                 </xsd:element>
                 <xsd:element name="playlistList">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="Playlist" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:element name="playlist" minOccurs="0" maxOccurs="unbounded">
                                 <xsd:complexType>
                                     <xsd:sequence>
-                                        <xsd:element name="PlaylistId" type="xsd:int"/>
-                                        <xsd:element name="PlaylistName" type="xsd:string"/>
+                                        <xsd:element name="playlistid" type="xsd:int"/>
+                                        <xsd:element name="playlistName" type="xsd:string"/>
                                     </xsd:sequence>
                                 </xsd:complexType>
                             </xsd:element>
@@ -36,20 +36,20 @@
                 <xsd:element name="wishlistList">
                     <xsd:complexType>
                         <xsd:sequence>
-                            <xsd:element name="Wishlist" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:element name="wishlist" minOccurs="0" maxOccurs="unbounded">
                                 <xsd:complexType>
                                     <xsd:sequence>
-                                        <xsd:element name="WishlistId" type="xsd:int"/>
-                                        <xsd:element name="Name" type="xsd:string"/>
-                                        <xsd:element name="albums">
+                                        <xsd:element name="wishlistid" type="xsd:int"/>
+                                        <xsd:element name="name" type="xsd:string"/>
+                                        <xsd:element name="albumList">
                                             <xsd:complexType>
                                                 <xsd:sequence>
-                                                    <xsd:element name="Album" minOccurs="0" maxOccurs="unbounded">
+                                                    <xsd:element name="album" minOccurs="0" maxOccurs="unbounded">
                                                         <xsd:complexType>
                                                             <xsd:sequence>
-                                                                <xsd:element name="AlbumId" type="xsd:int"/>
-                                                                <xsd:element name="AlbumTitle" type="xsd:string"/>
-                                                                <xsd:element name="ReleaseDate" type="xsd:date"/>
+                                                                <xsd:element name="albumid" type="xsd:int"/>
+                                                                <xsd:element name="albumName" type="xsd:string"/>
+                                                                <xsd:element name="albumDate" type="xsd:date"/>
                                                             </xsd:sequence>
                                                         </xsd:complexType>
                                                     </xsd:element>
